@@ -44,7 +44,7 @@
           <h1>Iniciar Sesión</h1>
       </div>
       
-      <form>
+      <form id="formLogin">
           <div class="formBloque">
               <label for="txtNombre">Nombre: </label>
               <input id="txtNombre" type="text" name="Nombre" placeholder="Escribir Nombre">
@@ -56,7 +56,7 @@
               <span id="errorPassword" style="display: block; color: red"></span>
           </div>
           <div class="formBloque-boton">
-              <button class="btn btn-primary " type="button" onclick="guardar(txtNombre,txtPassword);redireccionar()" >Iniciar Sesión</button>
+              <button class="btn btn-primary " type="button" onclick="guardar(txtNombre,txtPassword)" >Iniciar Sesión</button>
           </div>
       </form>
     </div>
