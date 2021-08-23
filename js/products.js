@@ -6,20 +6,19 @@ document.addEventListener("DOMContentLoaded", function (e) {
    
     
     showSpinner();
+    
     getJSONData(PRODUCTS_URL).then(function(resultObj) {
         if (resultObj.status === "ok") {
             productosCargar = resultObj.data;
-            //Muestro las categorías ordenadas
-            ListadeProductos(productosCargar);
+            listadeProductos(productosCargar);
             hideSpinner();
         }
     });
 });
 
-let productosCargar= [];
 
 
-function ListadeProductos(productosCargar) {
+function listadeProductos(productosCargar) {
 
     let htmlContentToAppend = "";
     for (let i = 0; i < productosCargar.length ; i++) {
@@ -33,9 +32,10 @@ function ListadeProductos(productosCargar) {
                 </div>
                 <div class="col">
                     <h4 class="mb-1">`+ elementos.name + `</h4>
-                    <small class="text-muted">` + elementos.description + `</small>
+                    <small class="text-muted">` + elementos.description + `</small> <br>
+                    <small class="text-muted">` + elementos.cost + ` ` + elementos.currency + `</small>
                 </div>
-                <p>`+elementos.soldCount+` artículos</p>
+                <p>`+elementos.soldCount+` artículos vendidos</p>
             </div>
         </div>
         `
