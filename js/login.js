@@ -19,7 +19,6 @@ function guardar(txtNombre, txtPassword) {
     } else {
         localStorage.setItem("usuario", txtNombre.value); //setItem almacena el dato en la posición "usuario"
         localStorage.setItem("password", txtPassword.value); // Almaceno la contraseña
-        sessionStorage.setItem("usuario", txtNombre.value);
         redireccionar();
         //location.href="index.html";
 

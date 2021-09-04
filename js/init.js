@@ -16,9 +16,13 @@ function desconectar(){
 }
 
 function compruebaUser(){
-  if(confirmacion==null){
+  if(confirmacion==null && (window.location.href != "file:///Z:/Hdocumentos/ProgBasica/JapDesarrolloWeb/ProyectoJap/Workspace+inicial/login.html")){
    window.location = "login.html";
-  } 
+  }else{
+    var nombre = localStorage.getItem('usuario');
+    //document.getElementById('userLogueado').innerHTML = nombre;
+    document.getElementById("userLogueado").innerHTML = nombre;
+  }
 }
 
 var showSpinner = function(){
@@ -58,5 +62,5 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  
+  compruebaUser()
 });
