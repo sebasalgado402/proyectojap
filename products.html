@@ -22,6 +22,7 @@
         <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
         <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
         <a class="py-2 d-none d-md-inline-block" id="userLogueado" href="my-profile.html"></a>
+        <button class="py-2 d-none d-md-inline-block" href="login.html" type="button" onclick="desconectar()" >LogOut</button>
       </div>
     </nav>
     <div class="container">
@@ -62,7 +63,7 @@
             </div>
           </div>
       </div>
-    <div id="productCarga"class="container p-5">
+    <div id="productCarga"class="container p-5" onclick="irAlArticulo()">
       <div role="alert" style="position: relative; width:auto; top: 0;"> 
         <h4 class="alert-heading"></h4>
         <p></p>

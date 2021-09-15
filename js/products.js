@@ -6,6 +6,8 @@ var currentSortCriteria = undefined;
 var minCount = undefined;
 var maxCount = undefined;
 
+
+
 function sortProducts(criteria, array){
     let result = [];
     if (criteria === ORDER_ASC_BY_PRICE)
@@ -75,6 +77,10 @@ function listadeProductos() {
         document.getElementById("productCarga").innerHTML = htmlContentToAppend;
     }
 }
+}
+
+function irAlArticulo(){
+    window.location= "product-info.html";
 }
 
 
