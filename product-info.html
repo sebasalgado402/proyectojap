@@ -3,6 +3,10 @@
 <html lang="en">
 
 <head>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <!-- Link para iconos -->
+
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -67,20 +71,23 @@
   <div id="mostrarComentarios">
   </div>
   <h4 class="container mt-5"><b>Nuevo Comentario</b></h4>
-  <div id="form-contenido" class="container mt-5 list-group-item">
-    <label for="exampleInputEmail1" class="form-label">Calificación :</label>
-    <select id="selectItem" class="form-select" aria-label="Default select example">
-      <option selected>---</option>
-      <option value="0">1</option>
-      <option value="1">2</option>
-      <option value="2">3</option>
-      <option value="3">4</option>
-      <option value="4">5</option>
-    </select>
 
+  <div id="form-contenido" class="container mt-5 list-group-item">
+    
+  
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label">Comentario</label>
-      <textarea class="form-control" id="textComentario" rows="3"></textarea>
+      <label for="exampleInputEmail1" class="form-label">Calificación :</label>
+      <span class="fa fa-star" style="cursor: pointer;" onclick="calificar(this)" id="1star"></span>
+      <span class="fa fa-star" style="cursor: pointer;" onclick="calificar(this)" id="2star"></span>
+      <span class="fa fa-star" style="cursor: pointer;" onclick="calificar(this)" id="3star"></span>
+      <span class="fa fa-star" style="cursor: pointer;" onclick="calificar(this)" id="4star"></span>
+      <span class="fa fa-star" style="cursor: pointer;" onclick="calificar(this)" id="5star"></span>
+
+
+      <br>
+      <label for="exampleFormControlTextarea1" class="form-label">Comentario:</label>
+      <span id="msgError"></span>
+      <textarea class="form-control" id="textComentario" rows="3" ></textarea>
     </div>
     <div class="col-12">
       <button class="btn btn-primary" type="submit" onclick="verificarComentario()">Enviar</button>
@@ -107,6 +114,7 @@
   </div>
 
   
+
 </body>
 
 </html>
