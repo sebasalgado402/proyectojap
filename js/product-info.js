@@ -1,10 +1,12 @@
 var infoProduct = [];
 var arrComentarios = [];
+
 let star= `<span class="fa fa-star"></span>`
 let starChecked= `<span class="fa fa-star checked"></span>`
 
-function mostrarContenido(lista) {
 
+function mostrarContenido(lista) {
+  
   let htmlContentToAppend = "";
 
   for (let i = 0; i < lista.length; i++) {
@@ -151,6 +153,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             infoProduct.push(resultObj.data);
             
             mostrarContenido(infoProduct);
+            
         }
     });
     
@@ -160,7 +163,50 @@ document.addEventListener("DOMContentLoaded", function (e) {
       if (resultObj.status === "ok") {
           arrComentarios = resultObj.data;
           mostrarComentarios(arrComentarios);
+         
       }
   });
   
 });
+document.addEventListener("DOMContentLoaded", function (e) {
+  getJSONData(PRODUCTS_URL).then(function (resultObj) {
+      if (resultObj.status === "ok") {
+        arrProdRelacionados=resultObj.data;
+        
+        mostrarProdRelacionados(arrProdRelacionados);
+      }
+  });
+  
+});
+var arrProdRelacionados = {} ;
+
+
+function mostrarProdRelacionados(lista) {
+
+  let htmlContentToAppend = "";
+
+  for (let i = 0; i < lista.length; i++) {
+      let contenido = lista[i];
+      
+      if (i == 1 || i == 3){
+        
+      htmlContentToAppend += `
+      
+          <div class="container mt-2">
+          <div class="row">
+          
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
+            <img class="bd-placeholder-img card-img-top"  src="`+contenido.imgSrc+`">
+            <div class="card-body">
+            <h3 class="m-3">`+contenido.name+`</h3>
+            <p class="card-text">`+contenido.description+`</p>
+            </div>
+            </a>
+         </div>
+         </div>
+        
+      `
+      }
+  };
+  document.getElementById('mostrarProdRelacionados').innerHTML = htmlContentToAppend;
+}

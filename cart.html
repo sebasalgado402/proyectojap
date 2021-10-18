@@ -41,19 +41,61 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="userLogueado" href="my-profile.html"></a>
-      <button class="py-2 d-none d-md-inline-block" href="login.html" type="button" onclick="desconectar()" >LogOut</button>
+      
+      <div class="dropdown">
+        <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userLogueado" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Dropdown link
+        </a>
+      
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="cart.html">Mi carrito</a>
+          <a class="dropdown-item btn btn-secondary" onclick="desconectar()">Cerrar sesión</a>
+        </div>
+      </div>
+      
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 17/10/2021) y Entrega 7 (Fecha de entrega: 14/11/2021).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <h2 class="container">Carrito de compras</h2>
+  <div class="container">
+  <table class="table table-dark">
+    <thead>
+      <tr> 
+        <th scope="col"> - </th>
+        
+        <th scope="col">Visualizar producto</th>
+        <th scope="col">Nombre del producto</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Costo unitario</th>
+        
+      
+        
+      </tr>
+    </thead>
+    <tbody>
+    </tr>
+    <tr id="cargarTabla">
+      <td><a>Eliminar</a></td>
+        
+        <td id="imgTabla"> </td>
+        <td id="tabNombre"></td>
+        <td>
+        <input id="numCantidad"type="number" >
+          
+        </td>
+        <td id="tabCostUnitario"></td>
+    </tbody>
+  </table>
+
+  <div id="cartaResultado"class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+      <li id="lisubTotal"class="list-group-item" onchange="">subTotal: </li>
+      <li id="liTotal"class="list-group-item" onchange="">Total: </li>
+      
+    </ul>
   </div>
+
+</div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>

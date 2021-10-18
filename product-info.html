@@ -59,15 +59,25 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <a class="py-2 d-none d-md-inline-block" id="userLogueado" href="my-profile.html"></a>
-      <button class="py-2 d-none d-md-inline-block" href="login.html" type="button"
-        onclick="desconectar()">LogOut</button>
+     
+        <div class="dropdown">
+          <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="userLogueado" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Dropdown link
+          </a>
+        
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+            <a class="dropdown-item" href="cart.html">Mi carrito</a>
+            <a class="dropdown-item btn btn-secondary" onclick="desconectar()">Cerrar sesión</a>
+          </div>
+        </div>
+        
     </div>
   </nav>
 
   <div id="mostrarContenido">
   </div>
+  
   <div id="mostrarComentarios">
   </div>
   <h4 class="container mt-5"><b>Nuevo Comentario</b></h4>
@@ -93,7 +103,10 @@
       <button class="btn btn-primary" type="submit" onclick="verificarComentario()">Enviar</button>
     </div>
   </div>
-
+  <h4 class="container mt-5"><b>Productos Relacionados</b></h4>
+  <div id="mostrarProdRelacionados">
+    
+  </div>
 
 
   <footer class="text-muted">
