@@ -59,19 +59,24 @@ function listadeProductos() {
         if (((minCount == undefined) || (minCount != undefined && parseInt(elementos.cost) >= minCount)) &&
         ((maxCount == undefined) || (maxCount != undefined && parseInt(elementos.cost) <= maxCount))) {
         htmlContentToAppend += `
-        <div class="list-group-item list-group-item-action">
-            <div class="row">
-                <div class="col-3">
-                    <img src="` + elementos.imgSrc + `" alt="` + `" class="img-thumbnail">
+        
+        <div class="col-md-6">
+        <a href="product-info.html" class="card mb-6 shadow-sm custom-card">
+        
+        <img src="`+elementos.imgSrc+`" alt="` + elementos.description + `" class="bd-placeholder-img card-img-top">
+        <div class="col">
+                <div class="d-flex w-100 justify-content-between">
+                    <h4 class="mb-1">` + elementos.name + `</h4>
+                    <small class="col-3 text-muted">` + elementos.soldCount + ` artículos</small>
+                <small class="col-3 text-muted">` + elementos.cost + ` ` + elementos.currency + `</small>
+                    
+                   
                 </div>
-                <div class="col">
-                    <h4 class="mb-1">`+ elementos.name + `</h4>
-                    <small class="text-muted">` + elementos.description + `</small> <br>
-                    <small class="text-muted">` + elementos.cost + ` ` + elementos.currency + `</small>
-                </div>
-                <p>`+elementos.soldCount+` artículos vendidos</p>
+                <p style="height: 70px;" class="mb-1">` + elementos.description + `</p>
+                
             </div>
-        </div>
+        </a>
+    </div>
         `
 
         document.getElementById("productCarga").innerHTML = htmlContentToAppend;

@@ -204,6 +204,8 @@ function mostrarProdRelacionados(lista) {
             </a>
          </div>
          </div>
+
+         
         
       `
       }
