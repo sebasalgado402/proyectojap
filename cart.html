@@ -86,6 +86,41 @@
         <td id="tabCostUnitario"></td>
     </tbody>
   </table>
+  <div id="formEnvio" style="float:right">
+    <h3 class="container">Método de envío</h3>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="rPremium" value="option1">
+      <label class="form-check-label" for="exampleRadios1">
+        Premium (2-5 días) - Costo del 15% sobre el subtotal
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="rExpress" value="option2">
+      <label class="form-check-label" for="exampleRadios2">
+        Express (5-8 días) - Costo del 7% sobre el subtotal.
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="exampleRadios" id="rStandard" value="option2" checked>
+      <label class="form-check-label" for="exampleRadios2">
+        Standard (12 a 15 días) - Costo del 5% sobre el subtotal
+      </label>
+    </div>
+    
+    
+  </blockquote>
+  <div class="container">
+    <h3>Elija método de pago</h3>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalA" onclick="modalBancario()">Transferencia Bancaria</button>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModalB" onclick="modalCredito()">Tarjeta de crédito</button>
+</div>
+<div class="container">
+<button id="btnFinalizar" type="button" class="btn btn-danger" onclick="validarDatosenvio()" disabled>Finalizar Compra</button>
+<div id="recibeMensaje" style="margin-top: 10px; color: green;">
+
+</div>
+</div>
+    </div>
 
   <div id="cartaResultado"class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
@@ -94,8 +129,59 @@
       
     </ul>
   </div>
+  <h3 class="container">Datos de Envío</h3>
+  
+  <div class="container row col-6" style="margin-bottom: 10%;">
+    
+  <form>
+    
+    <div class="form-group">
+      <label for="Nombre">Nombre del Receptor</label>
+      <input type="Nombre" class="form-control" id="txtNombre" placeholder="Ingrese Nombre">
+      
+    </div>
+    <div class="form-group">
+      <label for="País">País</label>
+      <input type="País" class="form-control" id="txtPaís" placeholder="Ingrese País">
+      
+    </div>
+    <div class="form-group">
+      <label for="Direccion">Dirección</label>
+      <input type="Direccion" class="form-control" id="txtDireccion" placeholder="Ingrese Direccion">
+      
+    </div>
+    <div class="form-group">
+      <label for="Nombre">Numero de Contacto</label>
+      <input type="Nombre" class="form-control" id="txtContacto" placeholder="Ingrese celular o telefono">
+      <label id="lbError" style="color: red; visibility: hidden;" class="container" >Asegúrese de completar todos los datos*</label>
+    </div>
+    
+    <blockquote>
 
+     
+  </form>
 </div>
+
+
+  <div id="modalBancario">
+
+  </div>
+  <div id="modalCredito">
+
+  </div>
+  <div id="modalCompra">
+
+  </div>
+
+  <input id="recibeTotal" type="text" style="display: none;">
+
+  
+  
+</div>
+
+
+
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
