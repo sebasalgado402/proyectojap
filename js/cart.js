@@ -41,6 +41,7 @@ function mostrarContenido(lista) {
         var precio = lista[i].unitCost;
 
         htmlContentToAppend += `
+        
         <td><a>Eliminar</a></td>
         
         <td id="imgTabla"><img src="`+ contenido.src + `"> </td>
@@ -49,6 +50,7 @@ function mostrarContenido(lista) {
         <input class="col-4" id="numCantidad"type="text" onkeyup="cambiarCantidad()" value="`+ contenido.count + `">
           
         </td>
+        
         <td id="tabCostUnitario">`+ contenido.unitCost + ` ` + contenido.currency + `</td>
         
         `

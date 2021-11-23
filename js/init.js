@@ -14,14 +14,12 @@ function desconectar(){
   localStorage.clear();
   window.location="login.html"
 }
-
+function mostrarUsuario(){
+  document.getElementById("userLogueado").innerHTML = confirmacion;
+}
 function compruebaUser(){
-  if(confirmacion==null && (window.location.href != "file:///Z:/Hdocumentos/ProgBasica/JapDesarrolloWeb/ProyectoJap/Workspace+inicial/login.html")){
+  if(confirmacion==null){
    window.location = "login.html";
-  }else{
-    var nombre = localStorage.getItem('usuario');
-    //document.getElementById('userLogueado').innerHTML = nombre;
-    document.getElementById("userLogueado").innerHTML = nombre;
   }
 }
 
@@ -62,5 +60,6 @@ var getJSONData = function(url){
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function(e){
-  compruebaUser()
+  mostrarUsuario();
+  //compruebaUser()
 });
